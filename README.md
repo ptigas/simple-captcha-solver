@@ -1,3 +1,11 @@
+# Simple CAPTCHA solver in python
+
+## Disclaimer
+
+This is a simple solver for a very specific and easy-to-solve captchas. Use the force to find something more complex.
+
+## The idea
+
 This is a very simple method for exploiting very simple CAPTCHAs  like those proposed [here](http://www.white-hat-web-design.co.uk/articles/php-captcha.php) and [here](http://www.white-hat-web-design.co.uk/articles/php-captcha.php) .
 
 In this example we are going to use the following images.
