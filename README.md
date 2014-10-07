@@ -2,18 +2,14 @@
 
 ## Disclaimer
 
-This is a simple solver for a very specific and easy-to-solve captchas. Use the force to find something more complex.
+This is a simple solver for a very specific and easy-to-solve CAPTCHAs like those proposed [here](http://www.white-hat-web-design.co.uk/articles/php-captcha.php) and [here](http://www.white-hat-web-design.co.uk/articles/php-captcha.php). Use the force to find something more complex.
 
 ## The idea
-
-This is a very simple method for exploiting very simple CAPTCHAs  like those proposed [here](http://www.white-hat-web-design.co.uk/articles/php-captcha.php) and [here](http://www.white-hat-web-design.co.uk/articles/php-captcha.php) .
-
 In this example we are going to use the following images.
 
 ![](http://ptigas.com/blog/wp-content/uploads/2011/02/test1.jpg "test") 
 
 ![](http://ptigas.com/blog/wp-content/uploads/2011/02/test2.jpg "test2")
-
 
 It&#8217;s easy to observe the followings. First of all, a fixed size (monospace) font has been used. This makes extracting all the letters and using them as masks to check each digit, one by one, very easy. Also, the alphabet is simple lowercase hexadecimal letters. Thus, we had to extract only 16 letters.
 
