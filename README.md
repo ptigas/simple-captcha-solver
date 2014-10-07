@@ -11,11 +11,11 @@ It&#8217;s easy to observe the followings. First of all, a fixed size (monospace
 
 The first part was to to extract all the letters. To achieve that, first of all we sampled several images so as to be sure that the images we have contains all the 16 letters. Then, using a simple image editor we cropped all the letters, one by one. We had to be careful so all the letters be aligned properly. Here is the final mask.
 
-![](http://ptigas.com/blog/wp-content/uploads/2011/02/letters.bmp "letters")
+![](http://ptigas.com/blog/wp-content/uploads/2011/02/letters.jpg "letters")
 
 As you can notice there is some noise which we have to remove. After playing with several techniques we finally ended to the following. We turned the image to greyscale. Then we used a threshold to remove some of the noise. Here is the example after the filtering (cropping also applied).
 
-![](http://ptigas.com/blog/wp-content/uploads/2011/02/source.bmp "source")
+![](http://ptigas.com/blog/wp-content/uploads/2011/02/source.jpg "source")
 
 So, now we have the image almost cleared and some letters to play with.
 
@@ -28,8 +28,6 @@ More formally
 Let
 
 ![d(I,l,o)=\sum_{0\leq i \leq W \\ 0 \leq j \leq H}{[I(o+i, j)-l(i,j)]}](http://s0.wp.com/latex.php?latex=d%28I%2Cl%2Co%29%3D%5Csum_%7B0%5Cleq+i+%5Cleq+W+%5C%5C+0+%5Cleq+j+%5Cleq+H%7D%7B%5BI%28o%2Bi%2C+j%29-l%28i%2Cj%29%5D%7D&bg=T&fg=333333&s=0 "d(I,l,o)=\sum_{0\leq i \leq W \\ 0 \leq j \leq H}{[I(o+i, j)-l(i,j)]}")
-
-http://s0.wp.com/latex.php?latex=d%28I%2Cl%2Co%29%3D%5Csum_%7B0%5Cleq+i+%5Cleq+W+%5C%5C+0+%5Cleq+j+%5Cleq+H%7D%7B%5BI%28o%2Bi%2C+j%29-l%28i%2Cj%29%5D%7D&bg=T&fg=333333&s=0
 
 be the distance of the image ![I](http://s0.wp.com/latex.php?latex=I&bg=T&fg=333333&s=0 "I"), with the letter ![l](http://s0.wp.com/latex.php?latex=l&bg=T&fg=333333&s=0 "l") in position ![o](http://s0.wp.com/latex.php?latex=o&bg=T&fg=333333&s=0 "o")
 
