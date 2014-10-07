@@ -1,13 +1,15 @@
 from PIL import Image
+import sys
 
-def ocr(im, threshold = 200, aplhabet = "0123456789abcdef"):
+def ocr(im, threshold = 200, mask = "letters.bmp", aplhabet = "0123456789abcdef"):	
 	img = Image.open(im)
 	img = img.convert("RGB")
 	box = (8, 8, 58, 18)
 	img = img.crop(box)
 	pixdata = img.load()
 
-	letters = Image.open('letters.bmp')
+	# open the mask
+	letters = Image.open(mask)
 	ledata = letters.load()
 
 	def test_letter(img, letter):
@@ -68,4 +70,5 @@ def ocr(im, threshold = 200, aplhabet = "0123456789abcdef"):
 		answer = answer + l[1]
 	return answer
 
-print ocr('test.jpg')
+if __name__ == '__main__' :
+	print ocr(sys.argv[1])
