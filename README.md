@@ -41,25 +41,28 @@ Then
 
 Thus, we need 5 letters ![l_{1},l_{2},l_{3},l_{4},l_{5}](http://s0.wp.com/latex.php?latex=l_%7B1%7D%2Cl_%7B2%7D%2Cl_%7B3%7D%2Cl_%7B4%7D%2Cl_%7B5%7D&bg=T&fg=333333&s=0 "l_{1},l_{2},l_{3},l_{4},l_{5}") with maximum ![d(l_{i},I,o)](http://s0.wp.com/latex.php?latex=d%28l_%7Bi%7D%2CI%2Co%29&bg=T&fg=333333&s=0 "d(l_{i},I,o)") ordered by ![p(l_{i}, I)](http://s0.wp.com/latex.php?latex=p%28l_%7Bi%7D%2C+I%29&bg=T&fg=333333&s=0 "p(l_{i}, I)").
 
-<pre data-language="python">def p(img, letter):
-        A = img.load()
-        B = letter.load()
-        mx = 1000000
-        max_x = 0
-        x = 0
-        for x in xrange(img.size[0]-letter.size[0]):
-            sum = 0
-            for i in xrange(letter.size[0]):
-                for j in xrange(letter.size[1]):
-                    sum = sum + abs(A[x+i, j][0] - B[i, j][0])
-            if sum &lt; mx :
-                mx = sum
-                max_x = x
-        return (mx, max_x)</pre>
+```python
+def p(img, letter):
+    A = img.load()
+    B = letter.load()
+    mx = 1000000
+    max_x = 0
+    x = 0
+    for x in xrange(img.size[0]-letter.size[0]):
+        sum = 0
+        for i in xrange(letter.size[0]):
+            for j in xrange(letter.size[1]):
+                sum = sum + abs(A[x+i, j][0] - B[i, j][0])
+        if sum &lt; mx :
+            mx = sum
+            max_x = x
+    return (mx, max_x)
+```
 
 Here is the code which implements this method. You can browse and download everything from [https://github.com/ptigas/simple-CAPTCHA-solver](https://github.com/ptigas/simple-CAPTCHA-solver)
 
-<pre data-language="python">from PIL import Image
+```python
+from PIL import Image
 
 def ocr(im, threshold = 200, aplhabet = "0123456789abcdef"):
     img = Image.open(im)
@@ -116,6 +119,7 @@ def ocr(im, threshold = 200, aplhabet = "0123456789abcdef"):
         answer = answer + l[1]
     return answer
 
-print ocr('test.jpg')</pre>
+print ocr('test.jpg')
+```
 
 p.s. I found [this](http://www.wausita.com/captcha/). Very nice tutorial for CAPTCHA solving using python and vector space searching.
