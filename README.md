@@ -11,7 +11,7 @@ In this example we are going to use the following images.
 
 ![](http://ptigas.com/blog/wp-content/uploads/2011/02/test2.jpg "test2")
 
-It&#8217;s easy to observe the followings. First of all, a fixed size (monospace) font has been used. This makes extracting all the letters and using them as masks to check each digit, one by one, very easy. Also, the alphabet is simple lowercase hexadecimal letters. Thus, we had to extract only 16 letters.
+First of all, a fixed size (monospace) font has been used. This makes extracting all the letters and using them as masks to check each digit, one by one, very easy. Also, the alphabet is simple lowercase hexadecimal letters. Thus, we had to extract only 16 letters.
 
 The first part was to to extract all the letters. To achieve that, first of all we sampled several images so as to be sure that the images we have contains all the 16 letters. Then, using a simple image editor we cropped all the letters, one by one. We had to be careful so all the letters be aligned properly. Here is the final mask.
 
