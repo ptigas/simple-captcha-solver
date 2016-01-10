@@ -64,7 +64,7 @@ Here is the code which implements this method. You can browse and download every
 ```python
 from PIL import Image
 
-def ocr(im, threshold = 200, aplhabet = "0123456789abcdef"):
+def ocr(im, threshold=200, alphabet="0123456789abcdef"):
     img = Image.open(im)
     img = img.convert("RGB")
     box = (8, 8, 58, 18)
@@ -75,8 +75,8 @@ def ocr(im, threshold = 200, aplhabet = "0123456789abcdef"):
     ledata = letters.load()
 
     # Clean the background noise, if color != black, then set to white.
-    for y in xrange(img.size[1]):
-        for x in xrange(img.size[0]):
+    for y in range(img.size[1]):
+        for x in range(img.size[0]):
             if not(pixdata[x, y][0] &gt; threshold \
             and pixdata[x, y][1] &gt; threshold \
             and pixdata[x, y][2] &gt; threshold):
@@ -89,37 +89,37 @@ def ocr(im, threshold = 200, aplhabet = "0123456789abcdef"):
 
     letterlist = []
 
-    for x in xrange(letters.size[0]):
+    for x in range(letters.size[0]):
         black = True
-        for y in xrange(letters.size[1]):
+        for y in range(letters.size[1]):
             if ledata[x, y][0] &lt;&gt; 0 :
                 black = False
                 break
         if black :
             if True :
-                box = (old_x+1, 0, x, 10)
+                box = (old_x + 1, 0, x, 10)
                 letter = letters.crop(box)
                 t = p(img, letter);
                 print counter, x, t
-                letterlist.append((t[0],aplhabet[counter], t[1]))
+                letterlist.append((t[0], alphabet[counter], t[1]))
             old_x = x
-            counter = counter + 1
+            counter += 1
 
-    box = (old_x+1, 0, 140, 10)
+    box = (old_x + 1, 0, 140, 10)
     letter = letters.crop(box)
     t = p(img, letter)
-    letterlist.append((t[0],aplhabet[counter], t[1]))
+    letterlist.append((t[0], alphabet[counter], t[1]))
 
     t = sorted(letterlist)
-    t = t[0:5] # 5-letter captcha
+    t = t[0:5]  # 5-letter captcha
 
-    final = sorted(t, key=lambda x: x[2])
+    final = sorted(t, key=lambda e: e[2])
     answer = ""
     for l in final:
         answer = answer + l[1]
     return answer
 
-print ocr('test.jpg')
+print(ocr('test.jpg'))
 ```
 
 p.s. I found [this](http://www.wausita.com/captcha/). Very nice tutorial for CAPTCHA solving using python and vector space searching.
