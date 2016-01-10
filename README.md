@@ -48,15 +48,15 @@ def p(img, letter):
     mx = 1000000
     max_x = 0
     x = 0
-    for x in xrange(img.size[0]-letter.size[0]):
-        sum = 0
-        for i in xrange(letter.size[0]):
-            for j in xrange(letter.size[1]):
-                sum = sum + abs(A[x+i, j][0] - B[i, j][0])
-        if sum &lt; mx :
-            mx = sum
+    for x in range(img.size[0] - letter.size[0]):
+        _sum = 0
+        for i in range(letter.size[0]):
+            for j in range(letter.size[1]):
+                _sum = _sum + abs(A[x+i, j][0] - B[i, j][0])
+        if _sum &lt; mx :
+            mx = _sum
             max_x = x
-    return (mx, max_x)
+    return mx, max_x
 ```
 
 Here is the code which implements this method. You can browse and download everything from [https://github.com/ptigas/simple-CAPTCHA-solver](https://github.com/ptigas/simple-CAPTCHA-solver)
