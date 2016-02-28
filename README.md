@@ -74,15 +74,16 @@ def ocr(im, threshold=200, alphabet="0123456789abcdef"):
     letters = Image.open('letters.bmp')
     ledata = letters.load()
 
-    # Clean the background noise, if color != black, then set to white.
+    # Clean the background noise, if color != white, then set to black.
     for y in range(img.size[1]):
         for x in range(img.size[0]):
-            if not(pixdata[x, y][0] &gt; threshold \
-            and pixdata[x, y][1] &gt; threshold \
-            and pixdata[x, y][2] &gt; threshold):
-                pixdata[x, y] = (0, 0, 0, 255)
-            else:
+            if (pixdata[x, y][0] > threshold) \
+                    and (pixdata[x, y][1] > threshold) \
+                    and (pixdata[x, y][2] > threshold):
+
                 pixdata[x, y] = (255, 255, 255, 255)
+            else:
+                pixdata[x, y] = (0, 0, 0, 255)
 
     counter = 0;
     old_x = -1;
