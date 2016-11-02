@@ -18,7 +18,7 @@ The first part was to to extract all the letters. To achieve that, first of all 
 
 Now we can focus on the CAPTCHA. As you can notice there is some noise which we have to remove (lines and stuff). After playing with several techniques we finally ended to the following. We turned the image to greyscale. Then we used a threshold to remove some of the noise. Here is the example after the filtering (cropping also applied).
 
-![](http://ptigas.com/blog/wp-content/uploads/2011/02/source.jpg "source")
+![](/filtered.jpg?raw=true "source")
 
 So, now we have the image almost cleared and some letters to play with.
 
@@ -119,7 +119,7 @@ def ocr(im, threshold=200, alphabet="0123456789abcdef"):
         answer = answer + l[1]
     return answer
 
-print(ocr('test.jpg'))
+print(ocr(sys.argv[1]))
 ```
 
 p.s. I found [this](http://www.wausita.com/captcha/). Very nice tutorial for CAPTCHA solving using python and vector space searching.
