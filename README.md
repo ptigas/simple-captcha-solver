@@ -5,21 +5,20 @@
 This is a simple solver for a very specific and easy-to-solve CAPTCHAs like those proposed [here](http://www.white-hat-web-design.co.uk/articles/php-captcha.php) and [here](http://www.white-hat-web-design.co.uk/articles/php-captcha.php). Use the force to find something more complex.
 
 ## The idea
-In this example we are going to use the following images.
-
-![](http://ptigas.com/blog/wp-content/uploads/2011/02/test1.jpg "test") 
-
-![](http://ptigas.com/blog/wp-content/uploads/2011/02/test2.jpg "test2")
+In this example we are going to use the following images.       
+![](/test.jpg?raw=true "test1")    
+![](/test2.jpg?raw=true "test2")
 
 First of all, a fixed size (monospace) font has been used. This makes extracting all the letters and using them as masks to check each digit, one by one, very easy. Also, the alphabet is simple lowercase hexadecimal letters. Thus, we had to extract only 16 letters.
 
 The first part was to to extract all the letters. To achieve that, first of all we sampled several images so as to be sure that the images we have contains all the 16 letters. Then, using a simple image editor we cropped all the letters, one by one. We had to be careful so all the letters be aligned properly. Here is the final mask.
 
-![](http://ptigas.com/blog/wp-content/uploads/2011/02/letters.jpg "letters")
+![](/letters.bmp?raw=true "letters")
+
 
 Now we can focus on the CAPTCHA. As you can notice there is some noise which we have to remove (lines and stuff). After playing with several techniques we finally ended to the following. We turned the image to greyscale. Then we used a threshold to remove some of the noise. Here is the example after the filtering (cropping also applied).
 
-![](http://ptigas.com/blog/wp-content/uploads/2011/02/source.jpg "source")
+![](/filtered.jpg?raw=true "source")
 
 So, now we have the image almost cleared and some letters to play with.
 
@@ -120,7 +119,7 @@ def ocr(im, threshold=200, alphabet="0123456789abcdef"):
         answer = answer + l[1]
     return answer
 
-print(ocr('test.jpg'))
+print(ocr(sys.argv[1]))
 ```
 
 p.s. I found [this](http://www.wausita.com/captcha/). Very nice tutorial for CAPTCHA solving using python and vector space searching.
