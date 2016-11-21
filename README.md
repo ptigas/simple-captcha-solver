@@ -92,7 +92,7 @@ def ocr(im, threshold=200, alphabet="0123456789abcdef"):
     for x in range(letters.size[0]):
         black = True
         for y in range(letters.size[1]):
-            if ledata[x, y][0]  0 :
+            if ledata[x, y][0] <> 0 :
                 black = False
                 break
         if black :
