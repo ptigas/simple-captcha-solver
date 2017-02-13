@@ -57,11 +57,10 @@ def decoder(
                 black = False
                 break
         if black:
-            if True:
-                box = (old_x + 1, 0, x, 10)
-                letter = letters.crop(box)
-                t = test_letter(img, letter)
-                letterlist.append((t[0], alphabet[counter], t[1]))
+            box = (old_x + 1, 0, x, 10)
+            letter = letters.crop(box)
+            t = test_letter(img, letter)
+            letterlist.append((t[0], alphabet[counter], t[1]))
             old_x = x
             counter += 1
 
