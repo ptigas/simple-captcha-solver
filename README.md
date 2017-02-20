@@ -15,7 +15,6 @@ The first part was to to extract all the letters. To achieve that, first of all 
 
 ![](/letters.bmp?raw=true "letters")
 
-
 Now we can focus on the CAPTCHA. As you can notice there is some noise which we have to remove (lines and stuff). After playing with several techniques we finally ended to the following. We turned the image to greyscale. Then we used a threshold to remove some of the noise. Here is the example after the filtering (cropping also applied).
 
 ![](/filtered.jpg?raw=true "source")
