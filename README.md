@@ -9,7 +9,7 @@ In this example we are going to use the following images.
 ![](/test.jpg?raw=true "test1")    
 ![](/test2.jpg?raw=true "test2")
 
-First of all, a fixed size (monospace) font has been used. This makes extracting all the letters and using them as masks to check each digit, one by one, very easy. Also, the alphabet is simple lowercase hexadecimal letters. Thus, we had to extract only 16 letters.
+First of all, a fixed size (monospace) font has been used. This makes extracting the letters and using them as masks to check each digit, one by one, very easy. Also, the alphabet is simple lowercase hexadecimal letters. Thus, we had to extract only 16 letters.
 
 The first part was to to extract all the letters. To achieve that, first of all we sampled several images so as to be sure that the images we have contains all the 16 letters. Then, using a simple image editor we cropped all the letters, one by one. We had to be careful so all the letters be aligned properly. Here is the final mask.
 
